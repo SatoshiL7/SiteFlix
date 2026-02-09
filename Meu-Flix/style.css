@@ -1,0 +1,176 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #141414;
+  color: white;
+}
+
+header {
+  padding: 20px;
+  background: black;
+  font-size: 24px;
+}
+
+/* Catálogo */
+.catalogo {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+/* Card do filme */
+.card {
+  width: 160px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+/* Imagem da capa */
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+/* 👇 EFEITO ADICIONADO AQUI */
+.card:hover img {
+  box-shadow: 0 0 15px red;
+  transform: scale(1.08);
+}
+
+/* Título do filme */
+.card p {
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* Player */
+.player {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+}
+
+.player iframe {
+  width: 80%;
+  height: 80%;
+  margin: 5% auto;
+  display: block;
+  border: none;
+}
+
+.player span {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+:root {
+  --fundo: #141414;
+  --vermelho: #e50914;
+  --texto: #ffffff;
+}
+
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: 'Montserrat', sans-serif;
+}
+
+#pesquisa {
+  width: 300px;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover img {
+  transform: scale(1.12);
+  filter: brightness(0.8);
+}
+
+.card p {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-weight: bold;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card:hover p {
+  opacity: 1;
+}
+
+.topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 40px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.9),
+    rgba(0,0,0,0.3),
+    transparent
+  );
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #e50914; /* vermelho Netflix */
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.busca {
+  width: 250px;
+  padding: 10px 15px;
+
+  border-radius: 20px;
+  border: none;
+  outline: none;
+
+  font-size: 0.9rem;
+}
+
+.busca:focus {
+  box-shadow: 0 0 8px rgba(229, 9, 20, 0.8);
+}
+
+@media (max-width: 768px) {
+
+  .topo {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  .busca {
+    width: 100%;
+    max-width: 300px;
+  }
+}
